@@ -30,7 +30,7 @@ import com.compose.instagram.ui.theme.spacingSmall
 @Composable
 fun StoryItem(story: Story) {
 
-    val avatarContentDec =
+    val avatarContentDesc =
         stringResource(id = R.string.content_description_story, story.userNickName)
 
     Column(
@@ -40,7 +40,7 @@ fun StoryItem(story: Story) {
     ) {
         GlideImage(
             model = story.userAvatar,
-            contentDescription = avatarContentDec,
+            contentDescription = avatarContentDesc,
             modifier = Modifier
                 .size(64.dp)
                 .align(Alignment.CenterHorizontally)
