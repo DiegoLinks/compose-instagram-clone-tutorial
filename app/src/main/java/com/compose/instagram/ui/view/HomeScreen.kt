@@ -19,7 +19,7 @@ fun HomeScreen() {
 
         InstagramToolBar()
 
-        StoryItem(story = Story(userNickName = "Jane Doe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"))
+        StoryItem(story = Story(userNickName = "janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"))
     }
 }
 
