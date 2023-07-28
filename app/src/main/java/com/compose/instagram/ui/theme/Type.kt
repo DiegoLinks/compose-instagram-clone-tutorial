@@ -16,7 +16,7 @@ fun typography(onBackGround:Color): Typography{
         bodyLarge = TextStyle(
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Normal,
-            fontSize = fontMedium,
+            fontSize = fontSmall,
             lineHeight = 24.sp,
             letterSpacing = 0.5.sp,
             color = onBackGround
