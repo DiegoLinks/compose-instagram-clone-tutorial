@@ -22,7 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.compose.instagram.R
-import com.compose.instagram.data.Story
+import com.compose.instagram.data.model.Story
 import com.compose.instagram.ui.theme.StoryCircleColor
 import com.compose.instagram.ui.theme.spacingSmall
 

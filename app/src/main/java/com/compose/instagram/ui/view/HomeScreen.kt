@@ -10,7 +10,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.compose.instagram.data.Story
+import com.compose.instagram.data.model.Story
+import com.compose.instagram.data.repository.stories
 import com.compose.instagram.ui.theme.spacingMedium
 
 @Composable
@@ -21,19 +22,6 @@ fun HomeScreen() {
         .background(MaterialTheme.colorScheme.background)) {
 
         InstagramToolBar()
-
-        val stories = listOf(
-            Story(userNickName = "janedoe_", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "janedoe_janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "doe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "jane", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "j", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-            Story(userNickName = "janedoe", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"),
-        )
 
         StoryList(stories = stories)
     }
