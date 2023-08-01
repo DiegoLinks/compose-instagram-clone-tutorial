@@ -3,4 +3,6 @@
     <string name="content_description_notification_icon">Ícone de notificações na barra de ferramentas.</string>
     <string name="content_description_message_icon">Ícone de mensagens diretas (DM) na barra de ferramentas.</string>
     <string name="content_description_story" formatted="true">Storie de %s não visualizado.</string>
+    <string name="content_description_feed_avatar">Avatar com imagem do autor da postagem.</string>
+    <string name="content_description_feed_image">Imagem exibindo a foto da postagem.</string>
 </resources>
