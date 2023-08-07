@@ -1,5 +1,6 @@
 package com.compose.instagram.ui.view
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -20,15 +21,19 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.compose.instagram.R
 import com.compose.instagram.data.model.Feed
+import com.compose.instagram.ui.theme.Gray
 import com.compose.instagram.ui.theme.spacingLarge
 import com.compose.instagram.ui.theme.spacingMedium
 import com.compose.instagram.ui.theme.spacingSmall
@@ -110,44 +115,73 @@ fun FeedItem(feed: Feed) {
                 .padding(top = spacingLarge)
         ) {
 
-            Image(
-                painter = painterResource(id = likeIcon),
-                contentDescription = likeContentDesc,
-                modifier = Modifier
-                    .size(40.dp)
-                    .padding(end= spacingLarge)
-            )
+            FeedIcon(icon = likeIcon, contentDescription = likeContentDesc)
 
-            Image(
-                painter = painterResource(id = messageIcon),
-                contentDescription = messageContentDesc,
-                modifier = Modifier
-                    .size(40.dp)
-                    .padding(end= spacingLarge)
-            )
+            FeedIcon(icon = messageIcon, contentDescription = messageContentDesc)
 
-            Image(
-                painter = painterResource(id = commentIcon),
-                contentDescription = commentContentDesc,
-                modifier = Modifier
-                    .size(40.dp)
-                    .padding(end= spacingLarge)
-            )
+            FeedIcon(icon = commentIcon, contentDescription = commentContentDesc)
 
             Image(
                 painter = painterResource(id = bookmarkIcon),
                 contentDescription = bookmarkContentDesc,
                 modifier = Modifier
                     .size(40.dp)
-                    .padding(end= spacingLarge)
+                    .padding(end = spacingLarge)
                     .weight(1f)
                     .wrapContentWidth(align = Alignment.End)
             )
-
         }
+
+        Row(
+            modifier = Modifier
+                .padding(horizontal = spacingSmall)
+                .padding(top = spacingLarge)
+        ) {
+
+            val description = buildAnnotatedString {
+                withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)){
+                    append(feed.userNickName)
+                }
+                append(" ")
+                append(feed.description)
+            }
+
+            Text(
+                text = description,
+                modifier = Modifier
+                    .padding(horizontal = spacingMedium),
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.Start
+            )
+        }
+
+        Text(
+            text = feed.postedAgo,
+            modifier = Modifier
+                .padding(start = 12.dp)
+                .padding(top = spacingSmall),
+            maxLines = 1,
+            color = Gray,
+            overflow = TextOverflow.Ellipsis,
+            textAlign = TextAlign.Start
+        )
 
     }
 
+}
+
+@Composable
+fun FeedIcon(
+    @DrawableRes icon: Int,
+    contentDescription: String
+) {
+    Image(
+        painter = painterResource(id = icon),
+        contentDescription = contentDescription,
+        modifier = Modifier
+            .size(40.dp)
+            .padding(end = spacingLarge)
+    )
 }
 
 @Preview(showBackground = true)
