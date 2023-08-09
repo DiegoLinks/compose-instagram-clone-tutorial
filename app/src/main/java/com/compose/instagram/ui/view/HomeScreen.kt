@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Divider
@@ -23,19 +24,21 @@ import com.compose.instagram.ui.theme.spacingMedium
 @Composable
 fun HomeScreen() {
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-    ) {
+    LazyColumn(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
 
-        InstagramToolBar()
+        item {
+            InstagramToolBar()
+        }
 
-        StoryList(stories = stories)
+        item {
+            StoryList(stories = stories)
+        }
 
-        Divider(color = DividerColor, thickness = 0.2.dp)
+        item {
+            Divider(color = DividerColor, thickness = 0.2.dp)
+        }
 
-        FeedList(feedList = feedList)
+        feedList(feedList = feedList)
     }
 }
 
@@ -48,12 +51,9 @@ fun StoryList(stories: List<Story>) {
     }
 }
 
-@Composable
-fun FeedList(feedList: List<Feed>) {
-    LazyColumn(modifier = Modifier.padding(top = spacingMedium)) {
-        itemsIndexed(feedList) { _, item ->
-            FeedItem(feed = item)
-        }
+fun LazyListScope.feedList(feedList: List<Feed>) {
+    itemsIndexed(feedList) { _, item ->
+        FeedItem(feed = item)
     }
 }
 
