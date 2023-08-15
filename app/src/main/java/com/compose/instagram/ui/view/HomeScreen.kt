@@ -1,8 +1,6 @@
 package com.compose.instagram.ui.view
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
@@ -18,7 +16,7 @@ import com.compose.instagram.data.model.Feed
 import com.compose.instagram.data.model.Story
 import com.compose.instagram.data.repository.feedList
 import com.compose.instagram.data.repository.stories
-import com.compose.instagram.ui.theme.DividerColor
+import com.compose.instagram.ui.theme.InstagramTheme
 import com.compose.instagram.ui.theme.spacingMedium
 
 @Composable
@@ -35,7 +33,7 @@ fun HomeScreen() {
         }
 
         item {
-            Divider(color = DividerColor, thickness = 0.2.dp)
+            Divider(color = MaterialTheme.colorScheme.onSurface, thickness = 0.2.dp)
         }
 
         feedList(feedList = feedList)
@@ -61,4 +59,12 @@ fun LazyListScope.feedList(feedList: List<Feed>) {
 @Composable
 fun HomeScreenPreview() {
     HomeScreen()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DarkHomeScreenPreview() {
+    InstagramTheme(darkTheme = true) {
+        HomeScreen()
+    }
 }
