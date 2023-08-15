@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -33,7 +34,9 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.compose.instagram.R
 import com.compose.instagram.data.model.Feed
+import com.compose.instagram.data.repository.feedList
 import com.compose.instagram.ui.theme.Gray
+import com.compose.instagram.ui.theme.InstagramTheme
 import com.compose.instagram.ui.theme.spacingLarge
 import com.compose.instagram.ui.theme.spacingMedium
 import com.compose.instagram.ui.theme.spacingSmall
@@ -53,6 +56,8 @@ fun FeedItem(feed: Feed) {
     val messageContentDesc = stringResource(R.string.button_message_content_description)
     val commentContentDesc = stringResource(R.string.button_coment_content_description)
     val bookmarkContentDesc = stringResource(R.string.button_bookmark_content_description)
+
+    val iconsColor = MaterialTheme.colorScheme.onBackground
 
     Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
 
@@ -128,7 +133,8 @@ fun FeedItem(feed: Feed) {
                     .size(40.dp)
                     .padding(end = spacingLarge)
                     .weight(1f)
-                    .wrapContentWidth(align = Alignment.End)
+                    .wrapContentWidth(align = Alignment.End),
+                colorFilter = ColorFilter.tint(iconsColor)
             )
         }
 
@@ -180,7 +186,8 @@ fun FeedIcon(
         contentDescription = contentDescription,
         modifier = Modifier
             .size(40.dp)
-            .padding(end = spacingLarge)
+            .padding(end = spacingLarge),
+        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onBackground)
     )
 }
 
@@ -188,13 +195,14 @@ fun FeedIcon(
 @Composable
 fun FeedItemPreview() {
     FeedItem(
-        feed = Feed(
-            userNickName = "Joe Doe",
-            localName = "Brasil",
-            userAvatar = "",
-            imageUrl = "",
-            description = "",
-            postedAgo = "Há 2 dias"
-        )
+        feed = feedList[0]
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DarkFeedItemPreview() {
+    InstagramTheme(darkTheme = true) {
+        FeedItem(feed = feedList[1])
+    }
 }
