@@ -23,6 +23,8 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.compose.instagram.R
 import com.compose.instagram.data.model.Story
+import com.compose.instagram.data.repository.stories
+import com.compose.instagram.ui.theme.InstagramTheme
 import com.compose.instagram.ui.theme.StoryCircleColor
 import com.compose.instagram.ui.theme.spacingSmall
 
@@ -63,5 +65,13 @@ fun StoryItem(story: Story) {
 @Preview(showBackground = true)
 @Composable
 fun StoryItemPreview() {
-    StoryItem(story = Story(userNickName = "", userAvatar = ""))
+    StoryItem(story = stories[0])
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DarkStoryItemPreview() {
+    InstagramTheme(darkTheme = true) {
+        StoryItem(story = stories[0])
+    }
 }
