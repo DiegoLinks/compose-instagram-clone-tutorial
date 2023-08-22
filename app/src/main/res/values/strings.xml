@@ -1,12 +1,15 @@
 <resources>
     <string name="app_name">Instagram</string>
-    <string name="content_description_notification_icon">Ícone de notificações na barra de ferramentas.</string>
-    <string name="content_description_message_icon">Ícone de mensagens diretas (DM) na barra de ferramentas.</string>
-    <string name="content_description_story" formatted="true">Storie de %s não visualizado.</string>
-    <string name="content_description_feed_avatar">Avatar com imagem do autor da postagem.</string>
-    <string name="content_description_feed_image">Imagem exibindo a foto da postagem.</string>
-    <string name="button_like_content_description">Botão para curtir a postagem.</string>
-    <string name="button_message_content_description">Botão para enviar a postagem.</string>
-    <string name="button_coment_content_description">Botão para comentar a postagem.</string>
-    <string name="button_bookmark_content_description">Botão para marcar a postagem.</string>
+    <string name="content_description_notification_icon">Notification icon in the toolbar.</string>
+    <string name="content_description_message_icon">Direct messages (DM) icon in the toolbar.</string>
+    <string name="content_description_story" formatted="true">%s\'s story not viewed.</string>
+    <string name="content_description_feed_avatar">Avatar with the author\'s image.</string>
+    <string name="content_description_feed_image">Image displaying the post\'s photo.</string>
+    <string name="button_like_content_description">like button for the post.</string>
+    <string name="button_message_content_description">Send button for the post.</string>
+    <string name="button_comment_content_description">Comment button for the post.</string>
+    <string name="button_bookmark_content_description">Bookmark button for the post.</string>
+    <string name="button_message_toast_text">Clicked send the post.</string>
+    <string name="button_comment_toast_text">Clicked to comment on the post.</string>
+    <string name="button_bookmark_toast_text">Clicked to bookmark the post.</string>
 </resources>
