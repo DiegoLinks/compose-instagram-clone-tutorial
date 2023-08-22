@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Instagram</string>
+    <string name="content_description_notification_icon">Ícone de notificações na barra de ferramentas.</string>
+    <string name="content_description_message_icon">Ícone de mensagens diretas (DM) na barra de ferramentas.</string>
+    <string name="content_description_story" formatted="true">Storie de %s não visualizado.</string>
+    <string name="content_description_feed_avatar">Avatar com imagem do autor da postagem.</string>
+    <string name="content_description_feed_image">Imagem exibindo a foto da postagem.</string>
+    <string name="button_like_content_description">Botão para curtir a postagem.</string>
+    <string name="button_message_content_description">Botão para enviar a postagem.</string>
+    <string name="button_comment_content_description">Botão para comentar a postagem.</string>
+    <string name="button_bookmark_content_description">Botão para marcar a postagem.</string>
+    <string name="button_message_toast_text">Clicou para enviar o post.</string>
+    <string name="button_comment_toast_text">Clicou para comentar o post.</string>
+    <string name="button_bookmark_toast_text">Clicou para marcar o post..</string>
+</resources>
