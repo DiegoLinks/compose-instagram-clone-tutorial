@@ -151,8 +151,7 @@ fun FeedItem(feed: Feed) {
                 contentDescription = messageContentDesc,
                 color = iconsColor
             ) {
-                val toast = Toast.makeText(context, messageToastText, duration)
-                toast.show()
+                Toast.makeText(context, messageToastText, duration).show()
             }
 
             FeedIcon(
@@ -160,8 +159,7 @@ fun FeedItem(feed: Feed) {
                 contentDescription = commentContentDesc,
                 color = iconsColor
             ) {
-                val toast = Toast.makeText(context, commentToastText, duration)
-                toast.show()
+                Toast.makeText(context, commentToastText, duration).show()
             }
 
             Image(
@@ -173,8 +171,7 @@ fun FeedItem(feed: Feed) {
                     .weight(1f)
                     .wrapContentWidth(align = Alignment.End)
                     .clickable {
-                        val toast = Toast.makeText(context, bookmarkToastText, duration)
-                        toast.show()
+                        Toast.makeText(context, bookmarkToastText, duration).show()
                     },
                 colorFilter = ColorFilter.tint(iconsColor)
             )
